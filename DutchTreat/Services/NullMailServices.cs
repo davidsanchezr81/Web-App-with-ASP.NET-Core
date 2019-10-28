@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DutchTreat.Services
 {
-    public class NullMailServices
+    public class NullMailServices : IMailServices
     {
         private readonly ILogger<NullMailServices> _logger;
 
@@ -17,6 +17,8 @@ namespace DutchTreat.Services
 
         public void SendMessage(string to, string subject, string body)
         {
+            _logger.LogInformation($"To: {to} Subject: {subject} Body: {body}");
+
 
 
         }
